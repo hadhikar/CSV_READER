@@ -1,0 +1,14 @@
+repos:
+- repo: local
+  hooks:
+      - id: black
+        name: black
+        entry: run_black.sh
+        language: script
+        verbose: true
+        pass_filenames: false
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.6.0
+  hooks:
+      - id: end-of-file-fixer
+      - id: debug-statements
