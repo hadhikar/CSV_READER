@@ -11,29 +11,55 @@ FileBySubcategory is a Python project that provides functionality to read a CSV 
 - **CSV File Processing**: The class can process the CSV file, performing all of the above operations.
 
 ## Installation
-This project requires Python and pandas. You can install pandas with pip:
+
+### Prerequisites
+
+Ensure that you have Python 3.x installed on your machine. You can verify this by running the following command in your terminal:
 
 ```bash
-    pip install pandas
+    python --version
 ```
 
-To download and install the project from GitHub, follow these steps:
+If you don't have Python installed, please visit the official Python website to download and install it.
+
+## Steps
+Follow these steps to download and install the project from GitHub:
 
 1. Clone the repository to your local machine:
 ```
     git clone https://github.com/<yourusername>/CSV_READER.git
 ```
+Replace <yourusername> with your actual GitHub username.
 
-2. Navigate to the project directory:
-```
-    cd FileBySubcategory
-```
+2. Initialize the project:
 
-3. Install the project:
+If you're using VSCode, it will automatically run the initialize.sh file. If this script fails to run, or if you're using a different IDE, you can manually run it with the following command:
 ```
-    pip install .
+    bash initialize.sh
 ```
 
+Alternatively, you can install the required libraries manually with:
+```
+    pip3 install -r requirements.txt
+```
+
+3. Run the project:
+
+You can start the project with the following command:
+```
+    make run
+```
+
+4. Run tests:
+
+You can run the tests with:
+```
+    make test
+```
+To view the test coverage, use:
+```
+    make show_coverage
+```
 
 ## Usage
 First, initialize the class with the location of your CSV file:
@@ -47,28 +73,3 @@ Then, you can process the CSV file:
 ```
 
 This will read the CSV file into a DataFrame, get a list of unique subcategories, group the DataFrame by caller_id for each subcategory, and write the result to a CSV file.
-
-## Testing
-The test file for FileBySubcategory contains unit tests for each method in the class. It uses the pytest module to create and run the tests. Here is an excerpt from the test file:
-```
-    def test_read_csv_file(file_by_subcategory):
-        """Test that read_csv_file method returns a DataFrame."""
-        df, _ = file_by_subcategory
-        assert isinstance(df, pd.DataFrame)
-        assert not df.empty
-
-    def test_filter_subcategory(file_by_subcategory):
-        """Test that filter_subcategory method returns a filtered DataFrame."""
-        df, file_by_subcategory = file_by_subcategory
-        filtered_df = file_by_subcategory.filter_subcategory(df, 'Hardware')
-        assert not filtered_df.empty
-        assert all(filtered_df['subcategory'] == 'Hardware' or pd.isnull(filtered_df['subcategory']))
-```
-You can run the test file with the following command:
-```
-    
-    pytest TestFileBySubcategory.py
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

@@ -61,4 +61,12 @@ chmod +x run_black.sh
 # Add the current directory to the PYTHONPATH
 export PYTHONPATH="${PYTHONPATH}:${pwd}"
 
+# Create Output directory
+if [ ! -d "output" ]; then
+    echo "Creating output directory"
+    mkdir output
+else
+    echo "Output directory already exists"
+fi
+
 echo "Initialization complete"
