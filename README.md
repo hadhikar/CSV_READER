@@ -20,7 +20,7 @@ Ensure that you have Python 3.x installed on your machine. You can verify this b
     python --version
 ```
 
-If you don't have Python installed, please visit the official Python website to download and install it.
+If you don't have Python installed, please visit the [official Python website](https://www.python.org/downloads/) to download and install it.
 
 ## Steps
 Follow these steps to download and install the project from GitHub:
