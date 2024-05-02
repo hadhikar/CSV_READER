@@ -3,8 +3,8 @@ repos:
   hooks:
       - id: black
         name: black
-        entry: run_black.sh
-        language: script
+        entry: black .
+        language: system
         verbose: true
         pass_filenames: false
 - repo: https://github.com/pre-commit/pre-commit-hooks
