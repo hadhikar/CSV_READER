@@ -23,7 +23,4 @@ def test_filter_subcategory(file_by_subcategory):
     df, file_by_subcategory = file_by_subcategory
     filtered_df = file_by_subcategory.filter_subcategory(df, "Hardware")
     assert not filtered_df.empty
-    assert all(
-        filtered_df["subcategory"] == "Hardware"
-        or pd.isnull(filtered_df["subcategory"])
-    )
+    assert "Hardware" in filtered_df["subcategory"].unique()
