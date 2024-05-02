@@ -41,7 +41,7 @@ fi
 
 # Install the required packages
 echo "Installing the required packages"
-python -m pip instal;l --upgrade pip
+python -m pip install --upgrade pip
 
 if [ -f "requirements.txt" ]; then
     python -m pip install -r requirements.txt
@@ -54,5 +54,8 @@ fi
 pip install pre-commit
 pre-commit install
 pre-commit autoupdate
+
+# Make the run_black.sh executable
+chmod +x run_black.sh
 
 echo "Initialization complete"
