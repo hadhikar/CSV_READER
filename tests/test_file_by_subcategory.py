@@ -1,6 +1,6 @@
 import pandas as pd
 import pytest
-from FileBySubcategory import FileBySubcategory
+from csv_reader.FileBySubcategory import FileBySubcategory
 
 
 @pytest.fixture(scope="module")

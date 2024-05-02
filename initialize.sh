@@ -58,4 +58,7 @@ pre-commit autoupdate
 # Make the run_black.sh executable
 chmod +x run_black.sh
 
+# Add the current directory to the PYTHONPATH
+export PYTHONPATH="${PYTHONPATH}:${pwd}"
+
 echo "Initialization complete"

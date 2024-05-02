@@ -1,4 +1,4 @@
-from FileBySubcategory import FileBySubcategory
+from csv_reader.FileBySubcategory import FileBySubcategory
 
 
 def cli():

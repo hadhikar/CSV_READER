@@ -8,5 +8,5 @@ last_commit_message=$(git log -1 --pretty=format:"%s")
 if ! git diff --cached --exit-code --quiet; then
     git add -u
 else
-    echo "No changes to commit"
+    echo "Failed to commit message: $last_commit_message"
 fi
